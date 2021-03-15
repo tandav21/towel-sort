@@ -6,15 +6,15 @@ module.exports = function towelSort (matrix) {
   if (matrix == undefined || matrix === null || matrix.length == 0) {
   return [];
   }
-    for (let x = 0; x < matrix.length; x++ ) {
-      for (let j = 0; j < matrix[x].length; j++) {
-        arr.push(matrix[x][j]);
-      }
-      if (x = 1) {
-       for (let j = matrix[x].length - 1; j >= 0; j--) {
-        arr.push(matrix[x][j]);
+    for (let i = 0; i < matrix.length; i++ ) {
+      for (let j = 0; j < matrix[i].length; j++) {
+        if (i == 1) {
+          arr.push(matrix[i][matrix[i].length - j - 1]);
+        }
+        else {
+          arr.push(matrix[i][j]);
         }
       }
-      return arr;
     }
-    }
+    return arr;
+  }
